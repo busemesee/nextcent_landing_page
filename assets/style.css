@@ -768,3 +768,234 @@ img:hover {
   width: 20px;
   height: 20px;
 }
+
+/* ===== RESPONSIVE ===== */
+
+/* Hamburger - desktop'ta gizli */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-nav-text);
+  transition: all 0.3s ease;
+}
+/* X animasyonu */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  /* Navbar */
+  .hamburger {
+    display: flex;
+  }
+  .nav_links,
+  .nav_actions {
+    display: none;
+    width: 100%;
+  }
+  .nav_links.open,
+  .nav_actions.open {
+    display: flex;
+  }
+  #navbar .container {
+    flex-wrap: wrap;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .nav_links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    order: 3;
+  }
+  .nav_actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 16px;
+    order: 4;
+  }
+
+  /* Hero */
+  .hero_content {
+    flex-direction: column;
+    gap: 40px;
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .hero_text h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .hero_image img {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  #hero .btn_primary {
+    margin: 0 auto;
+  }
+
+  /* Clients */
+  .clients_logos {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  /* Features */
+  .features_cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature_card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* About & Howto */
+  #about .container,
+  #howto .container {
+    flex-direction: column;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    gap: 32px;
+  }
+  .about_image img,
+  #howto .howto_image img {
+    width: 100%;
+  }
+
+  /* Stats */
+  #stats .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .stats_cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Testimonial */
+  #testimonial .container {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .testimonial_image img {
+    width: 100%;
+    height: auto;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .testimonial_customer {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* Blog */
+  .blog_cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .blog_card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .blog_card_images img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .blog_card_text {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 8px 8px;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* CTA */
+  #cta h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  /* Footer */
+  #footer .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .footer_right {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero */
+  .hero_text h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  /* Stats */
+  .stats_cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .stats_card_texts h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  /* Features */
+  .features_text h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  /* About / Howto headings */
+  #about .about_text h2,
+  #howto .howto_text h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  /* CTA */
+  #cta h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  /* Blog */
+  #blog .blog_texts h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  /* Testimonial logos */
+  .testimonial_customer {
+    gap: 12px;
+  }
+  .testimonial_customer img {
+    width: 36px;
+    height: 36px;
+  }
+}
